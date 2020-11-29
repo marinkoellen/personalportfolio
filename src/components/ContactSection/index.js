@@ -1,14 +1,14 @@
 import React from 'react';
+import { FaLinkedin } from 'react-icons/fa';
+import { IconContext } from 'react-icons/lib';
 
 import ContactForm from '../../components/ContactForm'
 
 import {
   InfoContainer,
-  InfoWrapper,
   TextWrapper,
   TopLine,
   Heading,
-  Subtitle,
 } from './InfoElements';
 
 const InfoSection = ({
@@ -25,14 +25,12 @@ const InfoSection = ({
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
-        <InfoWrapper>
-          <TextWrapper>
-            <TopLine>{topLine}</TopLine>
-            <Heading lightText={lightText}>{headline}</Heading>
-            <Subtitle darkText={darkText}>{description}</Subtitle>
-            <ContactForm />
-          </TextWrapper>
-        </InfoWrapper>
+        <TextWrapper>
+          <Heading lightText={lightText}>{headline}</Heading>
+
+        </TextWrapper>
+        <ContactForm />
+
       </InfoContainer>
     </>
   );

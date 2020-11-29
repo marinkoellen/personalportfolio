@@ -1,47 +1,71 @@
 import React from 'react';
-import Project1 from '../../images/NibbleProject.PNG';
-import Project2 from '../../images/ComparalistProject.PNG';
-import Project3 from '../../images/CSSProject.PNG';
+// import Swiper core and required components
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.scss';
 
+// Import Swiper styles
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
+import ProjectItem from '../ProjectItem';
+import { ProjectsContainer } from './ProjectsElements'
 import {
-  ProjectsContainer,
-  ProjectsH1,
-  ProjectsWrapper,
-  ProjectsCard,
-  ProjectsIcon,
-  ProjectsH2,
-  ProjectsP
-} from './ProjectsElements';
+  ProjectOne,
+  ProjectTwo,
+  ProjectThree,
+  ProjectFour
+} from './Data'
+import './swiper.css';
+
+// install Swiper components
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
+
 
 const Projects = () => {
+  console.log(ProjectOne)
   return (
-    <ProjectsContainer id='work'>
-      <ProjectsH1>Portfolio</ProjectsH1>
-      <ProjectsWrapper>
-        <ProjectsCard>
-          <ProjectsIcon src={Project1} />
-          <ProjectsH2>Nibble</ProjectsH2>
-          <ProjectsP>
-            Crowd funding project in React & Django
-          </ProjectsP>
-        </ProjectsCard>
-        <ProjectsCard>
-          <ProjectsIcon src={Project2} />
-          <ProjectsH2>Comparalist</ProjectsH2>
-          <ProjectsP>
-            Group project comparing items in React & Django
-          </ProjectsP>
-        </ProjectsCard>
-        <ProjectsCard>
-          <ProjectsIcon src={Project3} />
-          <ProjectsH2>Original CSS Portfolio</ProjectsH2>
-          <ProjectsP>
-            First project in CSS only.
-          </ProjectsP>
-        </ProjectsCard>
-      </ProjectsWrapper>
-    </ProjectsContainer>
+    <>
+      <ProjectsContainer id='work'>
+
+
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          pagination={
+            {
+              el: '.swiper-pagination',
+              clickable: true,
+              renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + (index + 1) + '</span>';
+              },
+            }
+          }
+          // scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
+
+        >
+          <SwiperSlide>
+            <ProjectItem {...ProjectOne} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectItem {...ProjectTwo} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectItem {...ProjectThree} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectItem {...ProjectFour} />
+          </SwiperSlide>
+          <div class="swiper-pagination"></div>
+
+        </Swiper>
+      </ProjectsContainer>
+    </>
   );
 };
 

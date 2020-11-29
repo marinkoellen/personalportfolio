@@ -5,12 +5,9 @@ import Sidebar from '../components/Sidebar'
 import HomeSection from '../components/HomeSection'
 import InfoSection from '../components/InfoSection';
 import ContactSection from '../components/ContactSection';
-
+import Footer from '../components/Footer'
 import Projects from '../components/Projects';
 
-import {
-    AboutMeData
-} from '../components/InfoSection/Data';
 
 import {
     ContactUsFormData
@@ -30,9 +27,10 @@ const Home = () => {
             <Sidebar isOpen={isOpen} toggle={toggle} />
             <Navbar toggle={toggle} />
             <HomeSection />
-            <InfoSection {...AboutMeData} />
+            <InfoSection />
             <Projects />
             <ContactSection {...ContactUsFormData} />
+            <Footer />
 
 
         </>

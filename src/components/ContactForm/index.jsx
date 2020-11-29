@@ -1,10 +1,8 @@
 import emailjs from "emailjs-com";
 import React, { useEffect, useRef, useState } from 'react';
-import { init } from 'emailjs-com';
-
+import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md';
 
 import {
-    StyledFormWrapper,
     StyledForm,
     StyledInput,
     StyledError,
@@ -17,7 +15,12 @@ import {
 
 
 function ContactUs() {
+    const [hover, setHover] = useState(false);
+    let btnRefSend = useRef();
 
+    const onHover = () => {
+        setHover(!hover);
+    };
     const [inputstate, setInputState] = useState({
         from_name: '',
         email: '',
@@ -36,6 +39,9 @@ function ContactUs() {
 
     function sendEmail(e) {
         e.preventDefault();
+        if (btnRefSend.current) {
+            btnRefSend.current.disabled = true
+        }
 
         for (let key in inputstate) {
             if (inputstate[key] === '') {
@@ -54,6 +60,10 @@ function ContactUs() {
                     message: '',
                 })
 
+                if (btnRefSend.current) {
+                    btnRefSend.current.disabled = false
+                }
+
 
             }, (error) => {
                 console.log(error.text);
@@ -67,47 +77,23 @@ function ContactUs() {
     return (
 
         <>
-
-            <StyledFormWrapper>
-                <StyledForm onSubmit={sendEmail} >
-                    <label htmlFor="from_name">Name</label>
-                    <StyledInput type="text" name="from_name" onChange={handleInput} value={inputstate.from_name} />
-                    <label htmlFor="email">Email </label>
-                    <StyledInput type="email" name="email" onChange={handleInput} value={inputstate.email} />
-                    <label htmlFor="message"  >Message</label>
-                    <StyledTextArea value={inputstate.message} name="message" onChange={handleInput} />
-                    {error && (
-                        <StyledError>
-                            <p>{error}</p>
-                        </StyledError>
-                    )}
-                    <StyledButton type="submit">Send Message</StyledButton>
-                </StyledForm>
-            </StyledFormWrapper>
-
-
-            {/* <div>
-                <div className="container">
-                    {message}
-
-                    <form onSubmit={sendEmail}>
-                        <div className="row pt-5 mx-auto">
-                            <div className="col-8 form-group mx-auto">
-                                <input type="text" className="form-control" placeholder="Name" name="from_name" />
-                            </div>
-                            <div className="col-8 form-group pt-2 mx-auto">
-                                <input type="email" className="form-control" placeholder="Email Address" name="email" />
-                            </div>
-                            <div className="col-8 form-group pt-2 mx-auto">
-                                <textarea required className="form-control" id="" cols="30" rows="8" placeholder="Your message" name="message"></textarea>
-                            </div>
-                            <div className="col-8 pt-3 mx-auto">
-                                <input type="submit" className="btn btn-info" value="Send Message"></input>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div> */}
+            <StyledForm onSubmit={sendEmail} >
+                <label htmlFor="from_name">Name *</label>
+                <StyledInput type="text" name="from_name" onChange={handleInput} value={inputstate.from_name} />
+                <label htmlFor="email" >Email * </label>
+                <StyledInput type="email" name="email" onChange={handleInput} value={inputstate.email} />
+                <label htmlFor="message"  >Message *</label>
+                <StyledTextArea value={inputstate.message} name="message" onChange={handleInput} />
+                {error && (
+                    <StyledError>
+                        <p>{error}</p>
+                    </StyledError>
+                )}
+                <StyledButton ref={btnRefSend} onMouseEnter={onHover}
+                    onMouseLeave={onHover}
+                    type="submit">SEND {hover ? <MdArrowForward /> : <MdKeyboardArrowRight />}
+                </StyledButton>
+            </StyledForm>
         </>
     )
 }

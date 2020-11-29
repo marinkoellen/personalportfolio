@@ -2,34 +2,27 @@ import styled from 'styled-components';
 
 export const InfoContainer = styled.div`
   color: #fff;
-  background: ${({ lightBg }) => (lightBg ? '#f9f9f9' : '#010606')};
-
+  background: #0c0c0c;
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   @media screen and (max-width: 768px) {
-    padding: 100px 0;
   }
 `;
 
 export const InfoWrapper = styled.div`
-  display: grid;
-  z-index: 1;
-  height: 100vh;
-  width: 100%;
-  max-width: 1100px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0 24px;
+  display: flex;
+  width: 60%;
+  flex-direction: column;
   justify-content: center;
 `;
 
 
-export const TextWrapper = styled.div`
-  max-width: 540px;
-  padding-top: 0;
-  padding-bottom: 60px;
-`;
 
 export const TopLine = styled.div`
-  color: #01bf71;
+  color: #6442ff;
   font-size: 16px;
   line-height: 16px;
   font-weight: 700;
@@ -38,23 +31,44 @@ export const TopLine = styled.div`
   margin-bottom: 16px;
 `;
 
-export const Heading = styled.h1`
-  margin-bottom: 24px;
-  font-size: 48px;
-  line-height: 1.1;
-  font-weight: 600;
-  color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#010606')};
 
-  @media screen and (max-width: 480px) {
-    font-size: 32px;
-  }
+export const AboutMeSubtitle = styled.p`
+margin-bottom: 10px;
+font-size: calc(5px + 0.6vw);
+max-width: 500px;
+line-height: 1.6;
+@media screen and (max-width: 768px) {
+  text-align: center;
+}
 `;
 
-export const Subtitle = styled.p`
-  max-width: 440px;
-  margin-bottom: 35px;
-  font-size: 18px;
-  line-height: 24px;
-  color: ${({ darkText }) => (darkText ? '#010606' : '#fff')};
+export const ImageContainer = styled.div`
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  max-width: 300px
 `;
 
+
+
+export const ImageofMe = styled.img`
+display: flex;
+object-fit: contain;
+width:100%;
+`
+
+export const BoldSpan = styled.span`
+color: #6442ff;
+`
+
+export const SheCodesLink = styled.a`
+color: white;
+cursor: pointer;
+transition: all 0.2s ease-in-out;
+text-decoration: underline;
+text-underline-position: under;
+
+&:hover {
+  color: #6442ff;
+}
+`;

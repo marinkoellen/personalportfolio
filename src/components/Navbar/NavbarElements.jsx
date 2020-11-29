@@ -3,7 +3,7 @@ import { Link as LinkR } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-background: ${({ scrollNav }) => (scrollNav ? '#000' : 'transparent')};
+background: ${({ scrollNav }) => (scrollNav ? '#0c0c0c' : '#0c0c0c')};
 height: 80px;
 margin-top: -80px;
   display: flex;
@@ -21,7 +21,8 @@ margin-top: -80px;
 
 export const NavbarContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ scrollNav }) => (scrollNav ? 'space-between' : 'flex-end')};
+  transition: all 0.2s ease-in-out;
   height: 80px;
   z-index: 1;
   width: 100%;
@@ -32,12 +33,10 @@ export const NavLogo = styled(LinkR)`
   color: #fff;
   justify-self: flex-start;
   cursor: pointer;
-  font-size: 1.5rem;
-  display: flex;
+  display: ${({ scrollNav }) => (scrollNav ? 'flex' : 'none')};
   align-items: center;
-  margin-left: 24px;
-  font-weight: bold;
-  text-decoration: none;
+  margin-left: 12px;
+
 `;
 
 export const MobileIcon = styled.div`
@@ -88,13 +87,15 @@ export const NavLinks = styled(LinkS)`
   cursor: pointer;
 
   &.active {
-    border-bottom: 3px solid #6442ff;
+    color: #6442ff;
+
   }
 `;
 
 export const NavBtnLink = styled.a`
 white-space: nowrap;
 padding: 10px 22px;
+margin-left: 10px;
 font-size: 16px;
 color: white;
 cursor: pointer;
@@ -120,4 +121,9 @@ text-decoration: none;
 
 export const NavContentGroup = styled.div`
 display: flex;
+`
+
+
+export const ImageSmallLogo = styled.img`
+width:100px
 `

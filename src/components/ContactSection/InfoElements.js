@@ -2,30 +2,39 @@ import styled from 'styled-components';
 
 export const InfoContainer = styled.div`
   color: #fff;
-  background: ${({ lightBg }) => (lightBg ? '#f9f9f9' : '#010606')};
-
-  @media screen and (max-width: 768px) {
-    padding: 100px 0;
-  }
-`;
-
-export const InfoWrapper = styled.div`
-  display: grid;
-  z-index: 1;
+  background: #0c0c0c;
   height: 100vh;
   width: 100%;
-  max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
   padding: 0 24px;
   justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    padding: 5vh 0;
+    flex-direction: column;
+    justify-content: flex-start;
+
+  }
+
 `;
 
 
 export const TextWrapper = styled.div`
-  max-width: 540px;
-  padding-top: 0;
-  padding-bottom: 60px;
+max-width: 200px;
+padding-top: 0;
+padding-bottom: 60px;
+display: flex;
+flex-direction:column;
+width: 25%;
+align-items: flex-start;
+@media screen and (max-width: 768px) {
+  padding-bottom: 10px;
+  width: 100%;
+
+}
 `;
 
 export const TopLine = styled.div`
@@ -45,13 +54,12 @@ export const Heading = styled.h1`
   font-weight: 600;
   color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#010606')};
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 768px) {
     font-size: 32px;
   }
 `;
 
 export const Subtitle = styled.p`
-  max-width: 440px;
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
