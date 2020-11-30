@@ -78,7 +78,11 @@ max-width: 129px;
 `
 
 export const StyledError = styled.div`
+margin-bottom: 10px;
 
 
 `
 
+export const ErrorMessage = styled.p`
+color: #6442ff;
+`

@@ -35,7 +35,7 @@ export const TopLine = styled.div`
 export const AboutMeSubtitle = styled.p`
 margin-bottom: 10px;
 font-size: calc(5px + 0.6vw);
-max-width: 600px;
+max-width: 700px;
 line-height: 1.6;
 @media screen and (max-width: 768px) {
   text-align: center;

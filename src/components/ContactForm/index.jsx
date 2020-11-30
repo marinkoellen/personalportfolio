@@ -8,6 +8,7 @@ import {
     StyledError,
     StyledTextArea,
     StyledButton,
+    ErrorMessage,
 } from './ContactForm';
 
 
@@ -46,6 +47,9 @@ function ContactUs() {
         for (let key in inputstate) {
             if (inputstate[key] === '') {
                 setError(`You must provide the ${key}`)
+                if (btnRefSend.current) {
+                    btnRefSend.current.disabled = false
+                }
                 return
             }
         }
@@ -86,7 +90,7 @@ function ContactUs() {
                 <StyledTextArea value={inputstate.message} name="message" onChange={handleInput} />
                 {error && (
                     <StyledError>
-                        <p>{error}</p>
+                        <ErrorMessage>{error}</ErrorMessage>
                     </StyledError>
                 )}
                 <StyledButton ref={btnRefSend} onMouseEnter={onHover}

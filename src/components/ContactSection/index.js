@@ -1,25 +1,26 @@
 import React from 'react';
-import { FaLinkedin } from 'react-icons/fa';
-import { IconContext } from 'react-icons/lib';
 
 import ContactForm from '../../components/ContactForm'
 
 import {
+  FaGithub,
+  FaLinkedin
+} from 'react-icons/fa';
+
+import {
   InfoContainer,
   TextWrapper,
-  TopLine,
+  IconContainer,
+  ContactIcon,
   Heading,
-} from './InfoElements';
+} from './ContactInfoElements';
 
 const InfoSection = ({
   lightBg,
-  topLine,
   lightText,
   headline,
-  description,
   id,
   primary,
-  darkText,
 }) => {
   console.log(primary);
   return (
@@ -27,7 +28,22 @@ const InfoSection = ({
       <InfoContainer lightBg={lightBg} id={id}>
         <TextWrapper>
           <Heading lightText={lightText}>{headline}</Heading>
+          <IconContainer>
+            <ContactIcon
+              href='https://www.linkedin.com/in/ellen-marinko/'
+              target='_blank'
+              aria-label='Linkedin'>
+              <FaLinkedin />
+            </ContactIcon>
+            <ContactIcon
+              href='https://github.com/marinkoellen/'
+              target='_blank'
+              aria-label='Github'
+            >
+              <FaGithub />
+            </ContactIcon>
 
+          </IconContainer>
         </TextWrapper>
         <ContactForm />
 
