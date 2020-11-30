@@ -21,21 +21,25 @@ margin-top: -80px;
 
 export const NavbarContainer = styled.div`
   display: flex;
-  justify-content: ${({ scrollNav }) => (scrollNav ? 'space-between' : 'flex-end')};
+  justify-content: ${({ scrollNav }) => (scrollNav ? 'space-between' : 'space-between')};
   transition: all 0.2s ease-in-out;
   height: 80px;
   z-index: 1;
   width: 100%;
   padding: 0 24px;
+
 `;
 
 export const NavLogo = styled(LinkR)`
   color: #fff;
   justify-self: flex-start;
   cursor: pointer;
-  display: ${({ scrollNav }) => (scrollNav ? 'flex' : 'none')};
+  display: ${({ scrollNav }) => (scrollNav ? 'flex' : 'flex')};
   align-items: center;
   margin-left: 12px;
+  -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms;
+  max-width:100px
 
 `;
 
@@ -111,8 +115,9 @@ text-decoration: none;
 
 &:hover {
   transition: all 0.2s ease-in-out;
-  background: #ffffff;
-  color: black;
+  background: #0c0c0c;
+  color: #6442ff;
+  border:solid 2px #6442ff;
 }
 `;
 
@@ -125,5 +130,9 @@ display: flex;
 
 
 export const ImageSmallLogo = styled.img`
-width:100px
+visibility: ${({ scrollNav }) => (scrollNav ? 'visible' : 'hidden')};
+opacity: ${({ scrollNav }) => (scrollNav ? '1' : '0')};
+transition: visibility 0s, opacity 0.4s linear;
+object-fit: cover;
+width:100%
 `

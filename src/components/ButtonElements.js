@@ -14,12 +14,13 @@ export const Button = styled(Link)`
   border:none;
   border:solid 2px white;
   border-radius: 5px;
-  background: rgba(255, 255, 255,0);
+  background: #0c0c0c;
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: ${({ primary }) => (primary ? '#ffffff' : '#6442ff')};
-    color: black;
+    background: #0c0c0c;
+    color: #6442ff;
+    border:solid 2px #6442ff;
 
   }
 `;

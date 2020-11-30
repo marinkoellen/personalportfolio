@@ -24,14 +24,12 @@ function HomeSection() {
   return (
     <HomeContainer id='home'>
       <HomeBg>
-        {/* <ImgBg playsInline autoPlay loop muted src={Video} type='video/mp4' /> */}
       </HomeBg>
       <HomeContent>
-
         <Spring
           from={{ opacity: 0 }}
           to={{ opacity: 1 }}
-          config={{ delay: 1000, duration: 700 }}
+          config={{ delay: 860, duration: 550 }}
         >
           {props => (
             <div style={props}>
@@ -45,7 +43,7 @@ function HomeSection() {
         <Spring
           from={{ opacity: 0 }}
           to={{ opacity: 1 }}
-          config={{ delay: 1700, duration: 700 }}
+          config={{ delay: 1100, duration: 550 }}
         >
           {props => (
             <div style={props}>
@@ -57,7 +55,7 @@ function HomeSection() {
         <Spring
           from={{ opacity: 0 }}
           to={{ opacity: 1 }}
-          config={{ delay: 2400, duration: 700 }}
+          config={{ delay: 1400, duration: 550 }}
         >
           {props => (
             <div style={props}>
@@ -71,7 +69,7 @@ function HomeSection() {
         <Spring
           from={{ opacity: 0 }}
           to={{ opacity: 1 }}
-          config={{ delay: 3000, duration: 700 }}
+          config={{ delay: 1900, duration: 500 }}
         >
           {props => (
             <div style={props}>

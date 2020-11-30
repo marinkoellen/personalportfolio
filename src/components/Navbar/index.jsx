@@ -3,6 +3,7 @@ import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { animateScroll as scroll } from 'react-scroll';
 
+
 import { Spring } from 'react-spring/renderprops';
 
 import resume from '../../images/resume.pdf'
@@ -50,7 +51,7 @@ const Navbar = ({ toggle }) => {
                     <NavbarContainer scrollNav={scrollNav}>
 
                         <NavLogo scrollNav={scrollNav} onClick={toggleHome} to='/'>
-                            <ImageSmallLogo src={ellen_small_picture} />
+                            <ImageSmallLogo scrollNav={scrollNav} className={scrollNav ? "visablelogo" : "hiddenlogo"} src={ellen_small_picture} />
                         </NavLogo>
 
 

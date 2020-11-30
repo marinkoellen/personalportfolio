@@ -35,7 +35,7 @@ export const TopLine = styled.div`
 export const AboutMeSubtitle = styled.p`
 margin-bottom: 10px;
 font-size: calc(5px + 0.6vw);
-max-width: 500px;
+max-width: 600px;
 line-height: 1.6;
 @media screen and (max-width: 768px) {
   text-align: center;
@@ -44,7 +44,9 @@ line-height: 1.6;
 
 export const ImageContainer = styled.div`
   display: flex;
+  flex-direction: column;
   width: 30%;
+  align-items: flex-end;
   justify-content: center;
   max-width: 300px
 `;
@@ -72,3 +74,16 @@ text-underline-position: under;
   color: #6442ff;
 }
 `;
+
+
+export const ContactIcon = styled.a`
+color: #fff;
+font-size: 24px;
+`
+
+
+export const IconContainer = styled.div`
+display: flex;
+flex-direction: row;
+width: fit-content;
+`

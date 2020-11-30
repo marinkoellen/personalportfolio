@@ -66,12 +66,13 @@ max-width: 129px;
 
 &:hover {
   transition: all 0.2s ease-in-out;
-  background: #ffffff;
-  color: black;
+  background: #0c0c0c;
+  color: #6442ff;
+  border:solid 2px #6442ff;
 }
 
 &:disabled {
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 `
