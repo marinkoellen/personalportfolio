@@ -8,6 +8,9 @@ max-width: 300px
 export const VideoContainer = styled.div`
   display: flex;
   width: 40vw;
+  @media screen and (max-width: 480px) {
+    width: 80vw;
+  }
 `;
 
 
@@ -21,6 +24,9 @@ export const InfoContainer = styled.div`
 display: flex;
 flex-direction: column;
 width:30%
+// @media screen and (max-width: 460px) {
+//   width:80%
+// }
 `
 
 export const TopLine = styled.div`
@@ -42,8 +48,8 @@ z-index: 1;
 @media screen and (max-width: 768px) {
   margin-left: 0px;
   align-items: center;
-
 }
+
 `
 
 export const ProjectItemContainer = styled.div`
@@ -75,9 +81,13 @@ font-size: calc(5px + 0.6vw);
 
 export const CodeIconLink = styled.a`
 display: ${({ shouldDisplay }) => (shouldDisplay ? 'grid' : 'none')};
-  color: #fff;
-  font-size: 24px;
-  margin-right: 8px;
+color: #fff;
+font-size: 24px;
+margin-right: 8px;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #6442ff;
+  }
 `;
 
 export const VideoLink = styled.a`

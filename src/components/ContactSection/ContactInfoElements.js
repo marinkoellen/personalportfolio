@@ -70,6 +70,10 @@ export const ContactIcon = styled.a`
 color: #fff;
 font-size: 24px;
 margin: 5px;
+&:hover {
+  transition: all 0.2s ease-in-out;
+  color: #6442ff;
+}
 `
 
 
