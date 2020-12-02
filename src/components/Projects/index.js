@@ -26,7 +26,6 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 
 const Projects = () => {
-  console.log(ProjectOne)
   return (
     <>
       <ProjectsContainer id='work'>
@@ -44,9 +43,6 @@ const Projects = () => {
               },
             }
           }
-          // scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
 
         >
           <SwiperSlide>
